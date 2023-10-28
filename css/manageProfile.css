@@ -1,0 +1,15 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+nav a img {
+	width: 4rem;
+}
+
+.btn-nav {
+	background-color: transparent;
+	color: black;
+	border-color: transparent;
+}

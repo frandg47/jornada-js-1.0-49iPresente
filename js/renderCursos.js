@@ -12,7 +12,7 @@ const renderizar = () => {
                     <div class="card-body">
                     <h5 class="card-title">${charla.título}</h5>
                     <p class="card-text">${charla.descripción}</p>
-                    <a href="${window.location.origin}/detailPage.html?id=${charla.id}" class="btn btn-danger">Ver detalle</a>
+                    <a href="${window.location.origin}/html/detailPage.html?id=${charla.id}" class="btn btn-danger">Ver detalle</a>
                     </div>
                 </div>
             </div>

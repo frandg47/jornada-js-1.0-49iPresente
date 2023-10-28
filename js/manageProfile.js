@@ -18,15 +18,12 @@ modal.addEventListener('click', () => {
 	rellenarInput();
 });
 
-// header distinto para log o no
-
 if (user) {
 	nameInput.value = user.nombre;
 	emailInput.value = user.email;
 	passwordInput.value = user.contraseña;
 }
 
-const profileForm = document.getElementById('profileForm');
 const passwordValidate = (password) => {
 	const isValidPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,12}$/;
 	return isValidPass.test(password);
@@ -37,6 +34,13 @@ const nameValidate = (newName) => {
 	return isValidName.test(newName);
 };
 
+const emailValidate = (newEmail) => {
+	const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	return isValidEmail.test(newEmail);
+};
+
+const profileForm = document.getElementById('profileForm');
+
 profileForm.addEventListener('click', function (event) {
 	event.preventDefault();
 	const newName = nameInput.value;
@@ -44,11 +48,33 @@ profileForm.addEventListener('click', function (event) {
 	const newPassword = passwordInput.value;
 
 	if (!passwordValidate(newPassword)) {
-		return alert('La contraseña no es válida, intente de nuevo.');
+		return Swal.fire({
+			position: 'center',
+			icon: 'warning',
+			title: 'La contraseña no es válida, intente de nuevo.',
+			showConfirmButton: false,
+			timer: 1500,
+		});
 	}
 
 	if (!nameValidate(newName)) {
-		return alert('El nombre no es valido, intente de nuevo');
+		return Swal.fire({
+			position: 'center',
+			icon: 'warning',
+			title: 'El nombre no es válido, intente de nuevo.',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+	}
+
+	if (!emailValidate(newEmail)) {
+		return Swal.fire({
+			position: 'center',
+			icon: 'warning',
+			title: 'El email no es válido, intente de nuevo.',
+			showConfirmButton: false,
+			timer: 1500,
+		});
 	}
 
 	user.nombre = newName;

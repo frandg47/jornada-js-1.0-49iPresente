@@ -14,16 +14,16 @@ const renderDetail = (id) => {
   if (charla) {
     detailContainer.innerHTML = `
     <div class="row p-5 bg-dark text-white">
-    <div class="col-3">
+    <div class="col-lg-3">
         <img src="${charla.imagen}" alt="" class="img-fluid">
     </div>
-    <div class="col-7">
+    <div class="col-lg-7 col-md-5">
         <h1>${charla.título}</h1>
         <h4>${charla.descripción}</h4>
         <p>${charla.hora}</p>
         <p>${charla.orador}</p>
     </div>
-    <div class="col-2 d-flex justify-content-center align-items-center">
+    <div class="col-lg-2 d-flex justify-content-center align-items-center">
         <button class="btn btn-danger">Inscribirme ahora</button>
     </div>
 </div>

@@ -2,8 +2,9 @@ const inputEmail = document.getElementById("correo");
 const inputContraseña = document.getElementById("password");
 const form = document.getElementById("formulario-login");
 const usuarioRechazado = document.getElementById("usuarioRechazado");
-const divIngreso = document.querySelector("#btn-ingreso");
-const dropUsuario = document.getElementById("dropdown-usuario");
+const btnIngreso = document.getElementById("btn-login")
+const btnRegistro = document.getElementById("btn-registro")
+
 
 //validaciones desde js en formulario
 form.addEventListener("input", function () {
@@ -58,8 +59,8 @@ form.addEventListener("submit", (e) => {
         arrayUsuario.push(usuarioEncontrado);
         form.reset();
         localStorage.setItem("login_success", JSON.stringify(arrayUsuario));
-        window.location.href = "../index.html";
-        // usuarioIngresado();
+       
+        usuarioIngresado();
     } else {
         usuarioRechazado.innerHTML = "<p>Contraseña incorrecta o usuario no encontrado</p>";
     }
@@ -73,10 +74,12 @@ const usuarioIngresado = () => {
 
     //modificio navbar cuando ingresa usuario
     if (user) {
-        dropUsuario.classList.remove("d-none");
-        divIngreso.classList.add("d-none"); 
-        window.location.href = "../index.html";
-        console.log ("estoy ingresado")
+        editPerfilButton.classList.remove("d-none");
+        cerrarSesionButton.classList.remove("d-none"); 
+        btnIngreso.classList.add("d-none")
+        btnRegistro.classList.add("d-none")
     }
-    console.log ("estoy ingresado en index")
+   
 }
+
+usuarioIngresado()

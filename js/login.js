@@ -73,7 +73,7 @@ if(form){
 const usuarioIngresado = () => {
 
     //inicio ls de usuario ingresado
-    const user = JSON.parse(localStorage.getItem("login_success")) || false;
+    const user = JSON.parse(localStorage.getItem("login_success"));
 
     //modificio navbar cuando ingresa usuario
     if (user) {
@@ -81,9 +81,11 @@ const usuarioIngresado = () => {
         cerrarSesionButton.classList.remove("d-none"); 
         btnIngreso.classList.add("d-none")
         btnRegistro.classList.add("d-none")
-        window.location.href= "../index.html"
+        if (window.location.pathname == "/html/login.html"){
+            window.location.href= "../index.html"            
+        }
     }
-   
+    
 }
 
 usuarioIngresado()

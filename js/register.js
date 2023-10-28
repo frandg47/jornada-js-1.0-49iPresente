@@ -16,10 +16,10 @@ form.addEventListener("input", () => {
     const valorContraseña2 = inputContraseña2.value.trim();
     const patronCorreo = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     const patronContraseña = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
-    const patronLetras = /^[a-zA-Z]+(\s[a-zA-Z]+)?$/;
+    const patronLetras = /^([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+)(\s+([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+))*$/;
     inputContraseña.setAttribute("type", "password");
 
-    //seteo validacion campo nombre
+ 
     if (
         valorNombre.length < 3 ||
         valorNombre.length > 20 ||
@@ -31,7 +31,7 @@ form.addEventListener("input", () => {
     } else {
         inputNombre.setCustomValidity("");
     }
-    //seteo validacion campo apellido
+   
     if (
         valorApellido.length < 3 ||
         valorApellido.length > 20 ||
@@ -43,7 +43,7 @@ form.addEventListener("input", () => {
     } else {
         inputApellido.setCustomValidity("");
     }
-    //seteo validacion campo correo
+
     if (valorCorreo < 3 || valorCorreo > 30 || !patronCorreo.test(valorCorreo)) {
         inputEmail.setCustomValidity(
             "El valor ingresado debe de ser mayor a 3, menor a 30 y debe de contener un @ con una direccion de correo electronico"
@@ -51,7 +51,7 @@ form.addEventListener("input", () => {
     } else {
         inputEmail.setCustomValidity("");
     }
-    //seteo validacion campo contraseña
+  
     if (
         valorContraseña.length < 8 ||
         valorContraseña.length > 16 ||
@@ -63,7 +63,7 @@ form.addEventListener("input", () => {
     } else {
         inputContraseña.setCustomValidity("");
     }
-    //seteo validacion campo contraseña 2
+
     if (
         valorContraseña2.length < 8 ||
         valorContraseña2.length > 16 ||

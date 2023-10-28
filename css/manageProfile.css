@@ -13,3 +13,19 @@ nav a img {
 	color: black;
 	border-color: transparent;
 }
+
+.primary-color {
+    background-color: #FFFFFF;
+}
+.secondary-color {
+    background-color: #D81D26;
+}
+.third-color {
+    background-color: #1A1A1A;
+}
+.fourth-color {
+    background-color: #2F2F2F;
+}
+.fifth-color {
+    background-color: #535353;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/manageProfile.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"><img src="../assets/images/RC - ISO - 1.png"
+                        alt="rolling-logo" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-lg-0 mt-ls-1">
+                        <li class="nav-item" id="btn-login">
+                            <a class="nav-link active" aria-current="page" href="./login.html">Login</a>
+                        </li>
+                        <li class="nav-item" id="btn-registro">
+                            <a class="nav-link active" aria-current="page" href="./register.html">Registro</a>
+                        </li>
+                        <li class="nav-item d-none" id="editPerfilButton">
+                            <button type="button" class="nav-link active btn-nav" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" id="modalModificar">
+                                Editar Perfil
+                            </button>
+                        </li>
+                        <li class="nav-item d-none" id="cerrarSesionButton">
+                            <button class="nav-link active btn-nav">Cerrar Sesión</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5 rounded-1 shadow">
+        <div class="row mb-4">
+
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 col-xl-6 px-5">
+                <h2 class="text-center py-5">Registrarme</h2>
+
+                <!-- LOGIN -->
+
+                <form action="#" class="needs-validation px-md-5 px-lg-0">
+                    <div class="mb-4 w-100 w-md-50">
+                        <label for="nombreusuario" class="form-label">Nombre</label>
+                        <input type="text" class="form-control w-md-50" id="nombre" required maxlength="20"
+                            minlength="3" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" required maxlength="20" minlength="3" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="correo" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="correo" required maxlength="30" minlength="3" />
+                    </div>
+                    <div class="mb-1">
+                        <label for="contraseña" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="contraseña"
+                            pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" required minlength="8"
+                            maxlength="16" />
+                        <small class="text-secondary">La contraseña debe tener al entre 8 y 16 caracteres, al menos
+                            un dígito, al menos una minúscula y al menos una
+                            mayúscula.</small>
+                    </div>
+                    <div class="mb-1">
+                        <label for="contraseña2" class="form-label">Repetir Contraseña</label>
+                        <input type="password" class="form-control" id="contraseña2"
+                            pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" required minlength="8"
+                            maxlength="16" />
+                        <small class="text-secondary">La contraseña debe de ser identica a la anterior</small>
+                    </div>
+                    <div class="mt-1 text-center text-danger" id="contraseñaRepetida"></div>
+                    <div class="mb-1">
+                        <input type="checkbox" class="form-check-input" id="conectado" required />
+                        <label for="conectado" class="form-check-label"><small>Acepto términos y condiciones.
+                                <a href="./404.html">Ver</a></small></label>
+                    </div>
+                    <div class="text-center text-danger mt-2" id="usuarioRechazado"></div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="submit">Registrarme</button>
+                    </div>
+                    <div class="my-3 text-center">
+                        <span>¿Ya tienes una cuenta?
+                            <a href="./login.html">Iniciar sesión</a></span>
+                    </div>
+                    <div class="mt-1 text-center text-danger" id="usuarioRechazado"></div>
+                </form>
+
+
+            </div>
+            <div class="col imgRegister"></div>
+
+        </div>
+    </div>
+    <!-- FIN REGISTRO -->
+    <div id="app">
+
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Perfil</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <label for="name" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name"
+                                maxlength="30" />
+
+                            <br />
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico:</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                    name="email" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" />
+                                <div id="passwordHelp" class="form-text">
+                                    Al menos una letra minúscula, una mayúscula y un número. Entre 8 y 12 caracteres.
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary" id="profileForm" data-bs-dismiss="modal">Guardar
+                            Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/manageProfile.js"></script>
+    <script src="../js/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

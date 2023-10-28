@@ -23,7 +23,7 @@
                 <form action="#" class="needs-validation px-md-5 px-lg-0">
                     <div class="mb-4 w-100 w-md-50">
                         <label for="nombreusuario" class="form-label">Nombre</label>
-                        <input type="text" class="form-control w-md-50" id="nombreusuario" required maxlength="20" minlength="3"
+                        <input type="text" class="form-control w-md-50" id="nombre" required maxlength="20" minlength="3"
                             pattern="^[A-Za-z]+$" />
                     </div>
                     <div class="mb-4">
@@ -51,12 +51,13 @@
                             maxlength="16" />
                         <small class="text-secondary">La contraseña debe de ser identica a la anterior</small>
                     </div>
-                    <div class="mt-1 text-center text-danger" id="contrasenaRepetida"></div>
+                    <div class="mt-1 text-center text-danger" id="contraseñaRepetida"></div>
                     <div class="mb-1">
                         <input type="checkbox" class="form-check-input" id="conectado" required />
                         <label for="conectado" class="form-check-label"><small>Acepto términos y condiciones.
                                 <a href="./404.html">Ver</a></small></label>
                     </div>
+                    <div class="text-center text-danger mt-2" id="usuarioRechazado"></div>
                     <div class="d-grid">
                         <button class="btn btn-primary" type="submit">Registrarme</button>
                     </div>
@@ -75,6 +76,9 @@
     </div>
     <!-- FIN REGISTRO -->
 
+
+
+    <script src="../js/register.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

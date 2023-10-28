@@ -11,10 +11,55 @@
   <link rel="stylesheet" href="./css/presentation.css ">
   <link rel="stylesheet" href="./css/index.css ">
   <link rel="stylesheet" href="./css/cardsInfo.css">
+  <link rel="stylesheet" href="../css/manageProfile.css" />
   <script src="https://kit.fontawesome.com/ea0d6f4a72.js" crossorigin="anonymous"></script>
     <title>RollingConf</title>
   </head>
   <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light fixed-top">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="../index.html"><img src="../assets/images/RC - ISO - 1.png" alt="rolling-logo" /></a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="./detalle.html">Detalle</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav ms-auto mb-lg-0 mt-ls-1">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="./login.html">Login</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="./sign-up.html">Registro</a>
+							</li>
+							<li class="nav-item">
+								<button type="button" class="nav-link active btn-nav" data-bs-toggle="modal" data-bs-target="#exampleModal" id="modalModificar">
+									Editar Perfil
+								</button>
+							</li>
+							<li class="nav-item" id="cerrarSesionButton">
+								<button class="nav-link active btn-nav">Cerrar Sesión</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+    </header>
     <main>
       <section class="container">
         <div class="row presentation mt-4 d-flex flex-column-reverse flex-md-row">

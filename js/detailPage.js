@@ -2,9 +2,30 @@ import { charlas } from "../charlas.js";
 
 console.log(charlas);
 
+const urlPrueba = new URL(window.location.href)
+const id = urlPrueba.searchParams.get("id")
+
 const detailContainer = document.getElementById("detailContainer");
 
+const inscribirButton = document.getElementById("inscribirButton");
 
+inscribirButton.addEventListener("click", () => {
+  if (id) {
+    const charla = charlas.findIndex((charla) => charla.id == id);
+
+    const userLogged = JSON.parse(localStorage.getItem("login_success"))[0]
+
+    if (charla >= 0) {
+      charlas[charla].asistentes.push(userLogged)
+      localStorage.setItem("charlas", JSON.stringify(charlas))
+
+      alert("Te has inscrito en la charla.");
+
+    } else {
+      alert("La charla no se encuentra disponible.");
+    }
+  }
+});
 
 const renderDetail = (id) => {
   const charla = charlas.find((charla) => charla.id == id);
@@ -17,14 +38,11 @@ const renderDetail = (id) => {
     <div class="col-lg-3">
         <img src="${charla.imagen}" alt="" class="img-fluid">
     </div>
-    <div class="col-lg-7 col-md-5">
+    <div class="col-lg-7">
         <h1>${charla.título}</h1>
         <h4>${charla.descripción}</h4>
         <p>${charla.hora}</p>
         <p>${charla.orador}</p>
-    </div>
-    <div class="col-lg-2 d-flex justify-content-center align-items-center">
-        <button class="btn btn-danger">Inscribirme ahora</button>
     </div>
 </div>
     `;
@@ -39,8 +57,6 @@ const renderDetail = (id) => {
   }
 };
 
-const urlPrueba = new URL(window.location.href)
-const id = urlPrueba.searchParams.get("id")
 console.log(id)
 
 renderDetail(id);

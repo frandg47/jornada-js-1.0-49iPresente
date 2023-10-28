@@ -13,3 +13,7 @@ nav a img {
 	color: black;
 	border-color: transparent;
 }
+
+header {
+	margin-bottom: 100px;
+}

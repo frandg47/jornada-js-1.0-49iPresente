@@ -4,8 +4,12 @@ console.log(charlas);
 
 const detailContainer = document.getElementById("detailContainer");
 
+
+
 const renderDetail = (id) => {
-  const charla = charlas.find((charla) => charla.id === id);
+  const charla = charlas.find((charla) => charla.id == id);
+  console.log(charla)
+  console.log(charlas)
 
   if (charla) {
     detailContainer.innerHTML = `
@@ -35,9 +39,8 @@ const renderDetail = (id) => {
   }
 };
 
-const URL = window.location.href
-console.log(URL)
+const urlPrueba = new URL(window.location.href)
+const id = urlPrueba.searchParams.get("id")
+console.log(id)
 
-const charlaIdSeleccionada = 1;
-
-renderDetail(charlaIdSeleccionada);
+renderDetail(id);

@@ -41,8 +41,8 @@ const renderDetail = (id) => {
     <div class="col-lg-7">
         <h1>${charla.título}</h1>
         <h4>${charla.descripción}</h4>
-        <p>${charla.hora}</p>
-        <p>${charla.orador}</p>
+        <p class="mt-4">Horario: ${charla.hora}</p>
+        <p>Speaker: ${charla.orador}</p>
     </div>
 </div>
     `;

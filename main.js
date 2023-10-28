@@ -1,32 +1,32 @@
-console.log("Hola mundo");
+// console.log("Hola mundo");
 
-let url = "http://localhost:3000";
+// let url = "http://localhost:3000";
 
-//traer usuarios de la BD
+// //traer usuarios de la BD
 
-const getUsuarios = async () => {
-  const resp = await fetch(url + "/" + "usuarios");
-  const data = await resp.json();
+// const getUsuarios = async () => {
+//   const resp = await fetch(url + "/" + "usuarios");
+//   const data = await resp.json();
 
-  return data;
-};
+//   return data;
+// };
 
-//Traer las charlas
-const getCharlas = async () => {
-  const resp = await fetch(url + "/" + "charlas");
-  const data = await resp.json();
+// //Traer las charlas
+// const getCharlas = async () => {
+//   const resp = await fetch(url + "/" + "charlas");
+//   const data = await resp.json();
 
-  return data;
-};
+//   return data;
+// };
 
-document.querySelector("#btn-user").addEventListener("click", () => {
-  getUsuarios().then((respuesta) => {
-    console.log(respuesta);
-  });
-});
+// document.querySelector("#btn-user").addEventListener("click", () => {
+//   getUsuarios().then((respuesta) => {
+//     console.log(respuesta);
+//   });
+// });
 
-document.querySelector("#btn-talks").addEventListener("click", () => {
-  getCharlas().then((respuesta) => {
-    console.log(respuesta);
-  });
-});
+// document.querySelector("#btn-talks").addEventListener("click", () => {
+//   getCharlas().then((respuesta) => {
+//     console.log(respuesta);
+//   });
+// });

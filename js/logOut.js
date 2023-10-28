@@ -13,5 +13,5 @@ const btnRegistrologout = document.getElementById("btn-registro")
 
 cerrarSesionButton.addEventListener('click', () => {
 	logout();
-	// window.location.href = '../index.html';
+	window.location.href = '../index.html';
 });
